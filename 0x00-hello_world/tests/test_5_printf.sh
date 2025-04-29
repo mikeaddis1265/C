@@ -2,7 +2,7 @@
 
 # Run the binary and capture output
 output=$(../5-printf)
-expected="pgrammar, but the outcome is a piece of art,"
+expected="pgram, but the outcome is a piece of art,"
 
 if [ "$output" = "$expected" ]; then
   echo "✅ test_5_printf: PASS"

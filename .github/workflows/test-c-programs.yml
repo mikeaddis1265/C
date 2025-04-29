@@ -24,11 +24,10 @@ jobs:
 
     - name: Run tests
       id: run_tests
-      continue-on-error: true
       run: |
         cd 0x00-hello_world/tests
         ./run_all_tests.sh | tee test_output.txt
-        echo "exit_code=$?" >> $GITHUB_ENV
+        echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_ENV
 
     - name: Report bugs if any tests fail
       if: env.exit_code != '0'
